@@ -14,9 +14,9 @@ export default HomeScreen = () => {
         showsVerticalScrollIndicator={false}>
         <Header />
 
-        <View style={styles.titles.wrapper}>
-          <Text style={styles.titles.subtitle}>Food</Text>
-          <Text style={styles.titles.title}>Delivery</Text>
+        <View style={styles.wrapper}>
+          <Text style={styles.subtitle}>Food</Text>
+          <Text style={styles.title}>Delivery</Text>
         </View>
 
         <Search />
@@ -33,21 +33,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  titles: {
-    wrapper: {
-      marginTop: 30,
-      paddingHorizontal: 20,
-    },
-    subtitle: {
-      fontFamily: 'Montserrat-Regular',
-      fontSize: 16,
-      color: colors.textDark,
-    },
-    title: {
-      fontFamily: 'Montserrat-Bold',
-      fontSize: 32,
-      color: colors.textDark,
-      marginTop: 5,
-    },
+  wrapper: {
+    marginTop: 30,
+    paddingHorizontal: 20,
+  },
+  subtitle: {
+    fontFamily: 'Montserrat-Regular',
+    fontSize: 16,
+    color: colors.textDark,
+  },
+  title: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 32,
+    color: colors.textDark,
+    marginTop: 5,
   },
 });
