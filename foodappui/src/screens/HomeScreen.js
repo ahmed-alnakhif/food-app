@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import Header from '../components/header/Header';
 import Search from '../components/search/Search';
