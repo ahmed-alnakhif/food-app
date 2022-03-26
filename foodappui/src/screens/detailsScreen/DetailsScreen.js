@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image , TouchableOpacity} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import colors from '../../assets/colors/colors';
-import DetailsHeader from '../components/headers/DetailsHeader';
-import IngredientsList from '../components/ingredients/IngredientsList';
+import colors from '../../../assets/colors/colors';
+import DetailsHeader from '../../components/headers/detailsHeader/DetailsHeader';
+import IngredientsList from '../../components/ingredients/IngredientsList';
+import styles  from './Styles'
 
 export default DetailsScreen = ({ route, navigation }) => {
   const { item } = route.params;
@@ -58,69 +59,3 @@ export default DetailsScreen = ({ route, navigation }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  titlesWrapper: {
-    paddingHorizontal: 20,
-    marginTop: 30,
-  },
-  title: {
-    fontFamily: 'Montserrat-Bold',
-    fontSize: 32,
-    color: colors.textDark,
-    width: '50%',
-  },
-  priceWrapper: {
-    marginTop: 20,
-    paddingHorizontal: 20,
-  },
-  priceText: {
-    color: colors.price,
-    fontFamily: 'Montserrat-Bold',
-    fontSize: 32,
-  },
-  infoWrapper: {
-    marginTop: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  infoLeftWrapper: {
-    paddingLeft: 20,
-  },
-  infoItemWrapper: {
-    marginBottom: 20,
-  },
-  infoItemTitle: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 14,
-    color: colors.textLight,
-  },
-  infoItemText: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 18,
-    color: colors.textDark,
-  },
-  itemImage: {
-    resizeMode: 'contain',
-    marginLeft: 50,
-  },
-  orderButtonWrapper: {
-    marginTop: 20,
-    marginHorizontal: 20,
-    backgroundColor: colors.primary,
-    borderRadius: 50,
-    paddingVertical: 25,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  orderButtonText: {
-    fontFamily: 'Montserrat-Bold',
-    fontSize: 15,
-    marginRight: 10,
-  },
-});

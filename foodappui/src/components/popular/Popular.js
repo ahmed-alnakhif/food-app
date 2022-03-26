@@ -4,6 +4,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import popularData from '../../../assets/data/popularData';
 import colors from '../../../assets/colors/colors';
+import styles from './Styles';
 
 export default function Popular({ navigation }) {
   return (
@@ -54,86 +55,3 @@ export default function Popular({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({
-  sectionWrapper: {
-    paddingHorizontal: 20,
-    marginBottom: 18,
-  },
-  sectionTitle: {
-    fontFamily: 'Montserrat-Bold',
-    fontSize: 16,
-  },
-  wrapper: {
-    flexDirection: 'row',
-    backgroundColor: colors.white,
-    borderRadius: 25,
-    paddingTop: 20,
-    paddingLeft: 20,
-    overflow: 'hidden',
-    shadowColor: colors.black,
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.05,
-    shadowRadius: 10,
-    elevation: 3,
-  },
-  leftContainer: {},
-  rightContainer: {
-    marginLeft: 40,
-  },
-  topWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  headerText: {
-    marginLeft: 10,
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 14,
-    color: colors.textDark,
-  },
-  midWrapper: {
-    marginTop: 20,
-  },
-  itemTitle: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 13,
-    color: colors.textDark,
-  },
-  itemWeight: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 13,
-    color: colors.textLight,
-    marginTop: 5,
-  },
-  bottomWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 10,
-    marginLeft: -20,
-  },
-  plusButton: {
-    backgroundColor: colors.primary,
-    paddingHorizontal: 40,
-    paddingVertical: 20,
-    borderTopRightRadius: 25,
-    borderBottomLeftRadius: 25,
-  },
-  ratingWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginLeft: 20,
-  },
-  ratingText: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 12,
-    color: colors.textDark,
-    marginLeft: 5,
-  },
-  cardImage: {
-    width: 210,
-    height: 125,
-    resizeMode: 'contain',
-  },
-});

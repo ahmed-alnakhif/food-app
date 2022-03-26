@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   Image,
   FlatList,
   TouchableOpacity,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
+import styles from './Styles';
 import colors from '../../../assets/colors/colors';
 import categoriesData from '../../../assets/data/categoriesData';
 
@@ -64,60 +64,4 @@ export default Categories = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  wrapper: {
-    marginTop: 30,
-  },
-  title: {
-    fontFamily: 'Montserrat-Bold',
-    paddingHorizontal: 20,
-    fontSize: 16,
-    color: colors.textDark,
-  },
-  listWrapper: {
-    paddingTop: 15,
-    paddingBottom: 25,
-  },
-  categoryItem: {
-    wrapper: {
-      backgroundColor: colors.primary,
-      marginVertical: 10,
-      marginRight: 20,
-      borderRadius: 20,
-      shadowColor: colors.black,
-      shadowOffset: {
-        width: 0,
-        height: 2,
-      },
-      shadowOpacity: 0.05,
-      shadowRadius: 10,
-      elevation: 3,
-    },
-    image: {
-      width: 60,
-      height: 60,
-      marginTop: 25,
-      alignSelf: 'center',
-      marginHorizontal: 20,
-    },
-    title: {
-      textAlign: 'center',
-      fontFamily: 'Montserrat-SemiBold',
-      fontSize: 14,
-      marginTop: 10,
-    },
-    selectWrapper: {
-      alignSelf: 'center',
-      justifyContent: 'center',
-      marginTop: 20,
-      marginBottom: 20,
-      width: 26,
-      height: 26,
-      borderRadius: 26,
-      marginBottom: 20,
-    },
-    selectIcon: {
-      alignSelf: 'center',
-    },
-  },
-});
+

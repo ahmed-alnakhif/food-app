@@ -1,12 +1,11 @@
 import React from 'react';
 import {
   View,
-  StyleSheet,
   SafeAreaView,
   Image,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import colors from '../../../assets/colors/colors'
+import styles from './Styles';
 
 export default function HomeHeader() {
   return (
@@ -15,7 +14,7 @@ export default function HomeHeader() {
         <View style={styles.headerWrapper}>
           <Image
             style={styles.avatarImage}
-            source={require('../../../assets/images/profile.png')}
+            source={require('../../../../assets/images/profile.png')}
           />
           <Feather name="menu" size={24} color={colors.textLight} />
         </View>
@@ -23,19 +22,3 @@ export default function HomeHeader() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  headerWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    paddingTop: 20,
-    alignItems: 'center',
-  },
-  avatarImage: {
-    width: 40,
-    height: 40,
-    borderRadius: 40,
-  },
-});

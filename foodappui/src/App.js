@@ -1,12 +1,12 @@
-import * as React from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './screens/HomeScreen';
-import DetailsScreen from './screens/DetailsScreen';
+import HomeScreen from './screens/homeScreen/HomeScreen';
+import DetailsScreen from './screens/detailsScreen/DetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -28,5 +28,3 @@ function App() {
     </NavigationContainer>
   );
 }
-
-export default App;
