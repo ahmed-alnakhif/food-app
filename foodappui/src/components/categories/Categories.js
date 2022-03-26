@@ -1,46 +1,59 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import React, { useState } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import colors from '../../../assets/colors/colors';
 import categoriesData from '../../../assets/data/categoriesData';
 
-const renderCategoryItem = ({ item }) => {
-  return (
-    <View
-      style={[
-        styles.categoryItem.wrapper,
-        {
-          backgroundColor: item.selected ? colors.primary : colors.white,
-          marginLeft: item.id == 1 ? 20 : 0,
-        },
-      ]}>
-      <Image style={styles.categoryItem.image} source={item.image} />
-      <Text style={styles.categoryItem.title}>{item.title}</Text>
-      <View
-        style={[
-          styles.categoryItem.selectWrapper,
-          { backgroundColor: item.selected ? colors.white : colors.secondary },
-        ]}>
-        <Feather
-          style={[
-            styles.categoryItem.selectIcon,
-            { color: item.selected ? colors.black : colors.white },
-          ]}
-          name="chevron-right"
-          size={8}
-        />
-      </View>
-    </View>
-  );
-};
+export default Categories = () => {
+  const [categories, setCategories] = useState(categoriesData);
+  const [selectedId, setSelectedId] = useState(1);
 
-export default function Categories() {
+  const renderCategoryItem = ({ item }) => {
+    return (
+      <TouchableOpacity
+        onPress={() => setSelectedId(item.id)}
+        style={[
+          styles.categoryItem.wrapper,
+          {
+            backgroundColor: item.id == selectedId ? colors.primary : colors.white,
+            marginLeft: item.id == 1 ? 20 : 0,
+          },
+        ]}>
+        <Image style={styles.categoryItem.image} source={item.image} />
+        <Text style={styles.categoryItem.title}>{item.title}</Text>
+        <View
+          style={[
+            styles.categoryItem.selectWrapper,
+            {
+              backgroundColor: item.id == selectedId ? colors.white : colors.secondary,
+            },
+          ]}>
+          <Feather
+            style={[
+              styles.categoryItem.selectIcon,
+              { color: item.id == selectedId ? colors.black : colors.white },
+            ]}
+            name="chevron-right"
+            size={8}
+          />
+        </View>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <View style={styles.wrapper}>
       <Text style={styles.title}>Categories</Text>
       <View style={styles.listWrapper}>
         <FlatList
-          data={categoriesData}
+          data={categories}
           renderItem={renderCategoryItem}
           keyExtractor={item => item.id}
           horizontal={true}
@@ -49,7 +62,7 @@ export default function Categories() {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -78,7 +91,7 @@ const styles = StyleSheet.create({
       },
       shadowOpacity: 0.05,
       shadowRadius: 10,
-      elevation: 5,
+      elevation: 3,
     },
     image: {
       width: 60,

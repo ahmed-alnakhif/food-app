@@ -8,7 +8,7 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import colors from '../../../assets/colors/colors'
 
-export default function Header() {
+export default function HomeHeader() {
   return (
     <View>
       <SafeAreaView>

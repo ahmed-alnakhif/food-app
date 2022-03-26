@@ -1,18 +1,19 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import popularData from '../../../assets/data/popularData';
 import colors from '../../../assets/colors/colors';
 
-export default function Popular() {
+export default function Popular({ navigation }) {
   return (
     <View style={styles.sectionWrapper}>
       <Text style={styles.sectionTitle}>Popular</Text>
 
       {popularData.map(item => (
-        <View
+        <TouchableOpacity
           key={item.id}
+          onPress={() => navigation.navigate('DetailsScreen', { item: item })}
           style={[styles.wrapper, { marginTop: item.id == 1 ? 10 : 20 }]}>
           <View style={styles.leftContainer}>
             <View style={styles.topWrapper}>
@@ -47,7 +48,7 @@ export default function Popular() {
           <View style={styles.rightContainer}>
             <Image style={styles.cardImage} source={item.image} />
           </View>
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
   );
@@ -56,7 +57,7 @@ export default function Popular() {
 const styles = StyleSheet.create({
   sectionWrapper: {
     paddingHorizontal: 20,
-    marginBottom: 18
+    marginBottom: 18,
   },
   sectionTitle: {
     fontFamily: 'Montserrat-Bold',
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.05,
     shadowRadius: 10,
-    elevation: 5,
+    elevation: 3,
   },
   leftContainer: {},
   rightContainer: {
